@@ -793,22 +793,7 @@ addEventListener("scroll",function(){if(!tk){tk=true;requestAnimationFrame(upd)}
 var ts=document.querySelectorAll(".ts b:not([data-nc])");if(!RM&&"IntersectionObserver"in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;io.unobserve(e.target);var el=e.target,n=parseInt(el.textContent,10);if(isNaN(n))return;var t0=null;function st(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/900);el.textContent=Math.round(n*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(st)}el.textContent="0";setTimeout(function(){requestAnimationFrame(st)},document.documentElement.classList.contains("ns")?100:1000)})},{threshold:.6});ts.forEach(function(b){io.observe(b)})}
 })();
 </script>
-<script>
-(function(){
-var ua=navigator.userAgent,AND=/Android/i.test(ua),IOS=/iPhone|iPad|iPod/i.test(ua)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
-if(!AND&&!IOS)return;
-var sp=document.getElementById("sp"),msg=document.getElementById("spm");
-function show(){if(!sp)return;msg.textContent="Abrindo o Instagram…";sp.classList.add("dn");void sp.offsetWidth;sp.classList.add("go");setTimeout(function(){sp.classList.remove("go")},1600)}
-document.addEventListener("click",function(e){
-var a=e.target.closest("a[data-ig]");if(!a||e.button!==0)return;
-e.preventDefault();var u=a.getAttribute("data-ig"),web="https://www.instagram.com/"+u+"/";show();
-if(AND){location.href="intent://instagram.com/_u/"+u+"/#Intent;package=com.instagram.android;scheme=https;S.browser_fallback_url="+encodeURIComponent(web)+";end";return}
-var gone=false,t=setTimeout(function(){if(!gone&&document.visibilityState==="visible")location.href=web},1500);
-function hid(){if(document.visibilityState==="hidden"){gone=true;clearTimeout(t)}}
-document.addEventListener("visibilitychange",hid,{once:true});addEventListener("pagehide",function(){gone=true;clearTimeout(t)},{once:true});
-location.href="instagram://user?username="+u},true);
-})();
-</script>
+
 <script>
 (function(){
 var st=document.querySelector(".stk"),cds=[].slice.call(document.querySelectorAll(".cd")),mq=matchMedia("(min-width:900px) and (min-height:700px)");
