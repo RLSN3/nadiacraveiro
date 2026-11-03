@@ -18,14 +18,13 @@
     .privacy-actions .privacy-accept{background:#4b5235;border-color:#4b5235;color:#fff}
     .privacy-actions button:focus-visible,.privacy-banner a:focus-visible{outline:2px solid #a8ad83;outline-offset:2px}
     @media(max-width:600px){.privacy-banner{right:10px;bottom:10px;width:calc(100% - 20px);padding:10px 11px;border-radius:9px}.privacy-banner p{font-size:10px;margin-bottom:7px}.privacy-actions{gap:8px}.privacy-actions button{min-height:26px;padding:4px 8px;font-size:10px}}
-  `;;
+  `;
   document.head.appendChild(style);
 
   var banner = document.createElement("section");
   banner.className = "privacy-banner";
   banner.setAttribute("role", "dialog");
   banner.setAttribute("aria-modal", "false");
-  banner.setAttribute("aria-labelledby", "privacy-title");
   banner.setAttribute("aria-describedby", "privacy-description");
   banner.hidden = !!saved;
   banner.innerHTML =
@@ -116,7 +115,9 @@
 
   // Mede cliques nos links do WhatsApp, sem registrar dados pessoais.
   document.addEventListener("click", function (event) {
-    var link = event.target.closest("a[href]");
+    var target = event.target;
+    if (target && target.nodeType !== 1) target = target.parentElement;
+    var link = target && typeof target.closest === "function" ? target.closest("a[href]") : null;
     if (!link || !analyticsAllowed || typeof window.gtag !== "function") return;
 
     var url = link.href || "";
