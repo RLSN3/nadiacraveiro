@@ -24,6 +24,7 @@
   var banner = document.createElement("section");
   banner.className = "privacy-banner";
   banner.setAttribute("role", "dialog");
+  banner.setAttribute("aria-label", "Preferências de privacidade");
   banner.setAttribute("aria-modal", "false");
   banner.setAttribute("aria-describedby", "privacy-description");
   banner.hidden = !!saved;
