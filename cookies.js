@@ -126,8 +126,9 @@
       method: "WhatsApp",
       link_url: url.split("?")[0],
       link_text: (link.getAttribute("aria-label") || link.textContent || "WhatsApp").trim().slice(0, 100),
-      page_location: location.href
+      page_location: location.href,
+      transport_type: "beacon"
     });
-  });
+  }, true);
 
 })();
