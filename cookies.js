@@ -120,7 +120,7 @@
     if (!link || !analyticsAllowed || typeof window.gtag !== "function") return;
 
     var url = link.href || "";
-    if (!/^(https?:\\/\\/)?(wa\\.me|api\\.whatsapp\\.com|www\\.whatsapp\\.com)/i.test(url)) return;
+    if (!/(wa\\.me|api\\.whatsapp\\.com|www\\.whatsapp\\.com)/i.test(url)) return;
 
     window.gtag("event", "whatsapp_click", {
       method: "WhatsApp",
