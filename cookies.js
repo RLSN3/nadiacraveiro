@@ -89,7 +89,7 @@
         ad_personalization: "denied"
       });
       window.gtag("js", new Date());
-      window.gtag("config", GA_ID);
+      window.gtag("config", GA_ID, { transport_type: "beacon" });
       var gaScript = document.createElement("script");
       gaScript.async = true;
       gaScript.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
@@ -127,8 +127,7 @@
       method: "WhatsApp",
       link_url: url.split("?")[0],
       link_text: (link.getAttribute("aria-label") || link.textContent || "WhatsApp").trim().slice(0, 100),
-      page_location: location.href,
-      transport_type: "beacon"
+      page_location: location.href
     });
   }, true);
 
