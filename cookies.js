@@ -9,17 +9,17 @@
 
   var style = document.createElement("style");
   style.textContent = `
-    .privacy-banner{position:fixed;z-index:99999;left:20px;right:20px;bottom:20px;max-width:760px;margin:auto;padding:22px 24px;background:#fffdf8;color:#34372b;border:1px solid rgba(75,82,53,.18);border-radius:16px;box-shadow:0 14px 50px rgba(24,28,18,.2);font:14px/1.55 inherit}
+    .privacy-banner{position:fixed;z-index:99999;left:16px;right:16px;bottom:16px;width:calc(100% - 32px);max-width:480px;margin:0 auto;padding:15px 18px;background:#fffdf8;color:#34372b;border:1px solid rgba(75,82,53,.18);border-radius:13px;box-shadow:0 8px 30px rgba(24,28,18,.16);font:12px/1.45 Arial,sans-serif}
     .privacy-banner[hidden]{display:none}
-    .privacy-banner h2{margin:0 0 7px;font:600 18px/1.25 inherit;color:#34372b}
-    .privacy-banner p{margin:0 0 15px;color:#55584c}
-    .privacy-banner a{color:#4b5235;text-decoration:underline;text-underline-offset:3px}
-    .privacy-actions{display:flex;gap:9px;flex-wrap:wrap}
-    .privacy-actions button{min-height:42px;padding:10px 16px;border-radius:999px;border:1px solid #4b5235;background:transparent;color:#34372b;font:600 13px inherit;cursor:pointer}
+    .privacy-banner h2{margin:0 0 5px;font:600 15px/1.25 Arial,sans-serif;color:#34372b}
+    .privacy-banner p{margin:0 0 11px;color:#55584c;font-size:12px;line-height:1.45}
+    .privacy-banner a{color:#4b5235;text-decoration:underline;text-underline-offset:2px}
+    .privacy-actions{display:flex;gap:8px;flex-wrap:wrap}
+    .privacy-actions button{min-height:34px;padding:7px 13px;border-radius:999px;border:1px solid #4b5235;background:transparent;color:#34372b;font:600 11px Arial,sans-serif;cursor:pointer}
     .privacy-actions .privacy-accept{background:#4b5235;color:#fff}
-    .privacy-actions button:focus-visible,.privacy-banner a:focus-visible{outline:3px solid #a8ad83;outline-offset:3px}
-    @media(max-width:600px){.privacy-banner{left:12px;right:12px;bottom:12px;padding:18px;border-radius:14px}.privacy-actions{display:grid;grid-template-columns:1fr}.privacy-actions button{width:100%}}
-  `;
+    .privacy-actions button:focus-visible,.privacy-banner a:focus-visible{outline:2px solid #a8ad83;outline-offset:2px}
+    @media(max-width:600px){.privacy-banner{left:10px;right:10px;bottom:10px;width:calc(100% - 20px);padding:13px 14px;border-radius:12px}.privacy-actions{display:flex;gap:7px}.privacy-actions button{flex:1;padding:7px 8px;font-size:10px}}
+  `;;
   document.head.appendChild(style);
 
   var banner = document.createElement("section");
