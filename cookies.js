@@ -58,8 +58,10 @@
   // Google Analytics 4: só é carregado após consentimento para analytics.
   var GA_ID = "G-W0QD36YGN4";
   var gaLoaded = false;
+  var analyticsAllowed = !!(saved && saved.analytics === true);
 
   function setAnalyticsConsent(allowed) {
+    analyticsAllowed = !!allowed;
     if (!allowed) {
       if (typeof window.gtag === "function") {
         window.gtag("consent", "update", {
@@ -111,5 +113,21 @@
   if (saved && saved.analytics === true) {
     setAnalyticsConsent(true);
   }
+
+  // Mede cliques nos links do WhatsApp, sem registrar dados pessoais.
+  document.addEventListener("click", function (event) {
+    var link = event.target.closest("a[href]");
+    if (!link || !analyticsAllowed || typeof window.gtag !== "function") return;
+
+    var url = link.href || "";
+    if (!/^(https?:\\/\\/)?(wa\\.me|api\\.whatsapp\\.com|www\\.whatsapp\\.com)/i.test(url)) return;
+
+    window.gtag("event", "whatsapp_click", {
+      method: "WhatsApp",
+      link_url: url.split("?")[0],
+      link_text: (link.getAttribute("aria-label") || link.textContent || "WhatsApp").trim().slice(0, 100),
+      page_location: location.href
+    });
+  });
 
 })();
