@@ -9,16 +9,15 @@
 
   var style = document.createElement("style");
   style.textContent = `
-    .privacy-banner{position:fixed;z-index:99999;left:16px;right:16px;bottom:16px;width:calc(100% - 32px);max-width:480px;margin:0 auto;padding:15px 18px;background:#fffdf8;color:#34372b;border:1px solid rgba(75,82,53,.18);border-radius:13px;box-shadow:0 8px 30px rgba(24,28,18,.16);font:12px/1.45 Arial,sans-serif}
+    .privacy-banner{position:fixed;z-index:99999;right:18px;bottom:18px;width:min(340px,calc(100% - 36px));margin:0;padding:11px 13px;background:#fffdf8;color:#45483c;border:1px solid rgba(75,82,53,.14);border-radius:10px;box-shadow:0 4px 18px rgba(24,28,18,.10);font:11px/1.4 Arial,sans-serif}
     .privacy-banner[hidden]{display:none}
-    .privacy-banner h2{margin:0 0 5px;font:600 15px/1.25 Arial,sans-serif;color:#34372b}
-    .privacy-banner p{margin:0 0 11px;color:#55584c;font-size:12px;line-height:1.45}
+    .privacy-banner p{margin:0 0 8px;color:#55584c;font-size:11px;line-height:1.4}
     .privacy-banner a{color:#4b5235;text-decoration:underline;text-underline-offset:2px}
-    .privacy-actions{display:flex;gap:8px;flex-wrap:wrap}
-    .privacy-actions button{min-height:34px;padding:7px 13px;border-radius:999px;border:1px solid #4b5235;background:transparent;color:#34372b;font:600 11px Arial,sans-serif;cursor:pointer}
-    .privacy-actions .privacy-accept{background:#4b5235;color:#fff}
+    .privacy-actions{display:flex;align-items:center;gap:12px}
+    .privacy-actions button{min-height:27px;padding:4px 9px;border-radius:6px;border:1px solid rgba(75,82,53,.35);background:transparent;color:#45483c;font:600 10px Arial,sans-serif;cursor:pointer}
+    .privacy-actions .privacy-accept{background:#4b5235;border-color:#4b5235;color:#fff}
     .privacy-actions button:focus-visible,.privacy-banner a:focus-visible{outline:2px solid #a8ad83;outline-offset:2px}
-    @media(max-width:600px){.privacy-banner{left:10px;right:10px;bottom:10px;width:calc(100% - 20px);padding:13px 14px;border-radius:12px}.privacy-actions{display:flex;gap:7px}.privacy-actions button{flex:1;padding:7px 8px;font-size:10px}}
+    @media(max-width:600px){.privacy-banner{right:10px;bottom:10px;width:calc(100% - 20px);padding:10px 11px;border-radius:9px}.privacy-banner p{font-size:10px;margin-bottom:7px}.privacy-actions{gap:8px}.privacy-actions button{min-height:26px;padding:4px 8px;font-size:10px}}
   `;;
   document.head.appendChild(style);
 
@@ -30,11 +29,10 @@
   banner.setAttribute("aria-describedby", "privacy-description");
   banner.hidden = !!saved;
   banner.innerHTML =
-    '<h2 id="privacy-title">Sua privacidade importa</h2>' +
-    '<p id="privacy-description">Este site pode utilizar recursos de armazenamento local e cookies necessários ao funcionamento. Você pode aceitar ou rejeitar recursos opcionais. Consulte nossa <a href="/politica-de-privacidade.html">Política de Privacidade</a>.</p>' +
+    '<p id="privacy-description">Este site utiliza cookies necessários e, com sua permissão, recursos opcionais. <a href="/politica-de-privacidade.html">Saiba mais</a>.</p>' +
     '<div class="privacy-actions">' +
-      '<button type="button" class="privacy-accept">Aceitar todos</button>' +
-      '<button type="button" class="privacy-reject">Rejeitar opcionais</button>' +
+      '<button type="button" class="privacy-accept">Aceitar</button>' +
+      '<button type="button" class="privacy-reject">Recusar opcionais</button>' +
     '</div>';
   document.body.appendChild(banner);
 
