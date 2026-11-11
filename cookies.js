@@ -9,17 +9,22 @@
 
   var style = document.createElement("style");
   style.textContent = `
-    .privacy-banner{position:fixed;z-index:99999;right:18px;bottom:18px;width:min(340px,calc(100% - 36px));margin:0;padding:11px 13px;background:#fffdf8;color:#45483c;border:1px solid rgba(75,82,53,.14);border-radius:10px;box-shadow:0 4px 18px rgba(24,28,18,.10);font:11px/1.4 Arial,sans-serif}
+    .privacy-banner{position:fixed;z-index:99999;right:18px;bottom:18px;width:min(360px,calc(100% - 36px));margin:0;padding:14px 16px;background:#fffdf8;color:#45483c;border:1px solid rgba(75,82,53,.14);border-radius:14px;box-shadow:0 8px 28px rgba(24,28,18,.16);font:13px/1.45 M,Manrope,system-ui,sans-serif;transition:bottom .3s}
     .privacy-banner[hidden]{display:none}
-    .privacy-banner p{margin:0 0 8px;color:#55584c;font-size:11px;line-height:1.4}
-    .privacy-banner a{color:#4b5235;text-decoration:underline;text-underline-offset:2px}
-    .privacy-actions{display:flex;align-items:center;gap:12px}
-    .privacy-actions button{min-height:27px;padding:4px 9px;border-radius:6px;border:1px solid rgba(75,82,53,.35);background:transparent;color:#45483c;font:600 10px Arial,sans-serif;cursor:pointer}
+    .privacy-banner p{margin:0 0 10px;color:#55584c;font-size:13px;line-height:1.45}
+    .privacy-banner a{color:#4b5235;text-decoration:underline;text-underline-offset:2px;display:inline-block;padding:12px 2px;margin:-12px 0}
+    .privacy-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    .privacy-actions button{min-height:44px;padding:0 16px;border-radius:999px;border:1px solid rgba(75,82,53,.35);background:transparent;color:#45483c;font:600 13px M,Manrope,system-ui,sans-serif;cursor:pointer}
     .privacy-actions .privacy-accept{background:#4b5235;border-color:#4b5235;color:#fff}
     .privacy-actions button:focus-visible,.privacy-banner a:focus-visible{outline:2px solid #a8ad83;outline-offset:2px}
-    @media(max-width:600px){.privacy-banner{right:10px;bottom:10px;width:calc(100% - 20px);padding:10px 11px;border-radius:9px}.privacy-banner p{font-size:10px;margin-bottom:7px}.privacy-actions{gap:8px}.privacy-actions button{min-height:26px;padding:4px 8px;font-size:10px}}
+    html:has(.privacy-banner:not([hidden])) .tt{bottom:calc(var(--pbh,150px) + 30px)!important}
+    body:has(.fx.on) .privacy-banner{bottom:calc(var(--fxh,72px) + 10px)}
+    @media(max-width:600px){.privacy-banner{right:10px;bottom:10px;width:calc(100% - 20px);padding:12px 14px;border-radius:12px}.privacy-actions button{flex:1}}
+    .privacy-footer-link a,.privacy-footer-link button{min-height:44px;display:inline-flex!important;align-items:center}
   `;
   document.head.appendChild(style);
+  function pbh(){try{var fx=document.querySelector(".fx");if(fx)document.documentElement.style.setProperty("--fxh",fx.offsetHeight+"px");var b=document.querySelector(".privacy-banner");if(b&&!b.hidden)document.documentElement.style.setProperty("--pbh",b.offsetHeight+"px")}catch(e){}}
+  addEventListener("resize",pbh);addEventListener("load",pbh);setTimeout(pbh,300);
 
   var banner = document.createElement("section");
   banner.className = "privacy-banner";
@@ -49,7 +54,7 @@
   if (footer) {
     var controls = document.createElement("p");
     controls.className = "privacy-footer-link";
-    controls.style.cssText = "margin:12px 0 0;font-size:12px";
+    controls.style.cssText = "margin:12px 0 0;font-size:13px";
     controls.innerHTML = '<a href="/politica-de-privacidade.html">Política de Privacidade</a> <span aria-hidden="true">·</span> <button type="button" style="border:0;background:none;padding:0;color:inherit;text-decoration:underline;cursor:pointer;font:inherit">Preferências de cookies</button>';
     controls.querySelector("button").addEventListener("click", function () { banner.hidden = false; });
     footer.appendChild(controls);

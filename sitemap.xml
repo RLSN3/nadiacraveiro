@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.nadiacraveiro.rlsn.com.br/</loc><lastmod>2026-11-03</lastmod></url>
-  <url><loc>https://www.nadiacraveiro.rlsn.com.br/conteudos/avaliacao-especializada-no-tratamento-de-feridas/</loc><lastmod>2026-11-03</lastmod></url>
-  <url><loc>https://www.nadiacraveiro.rlsn.com.br/conteudos/quando-procurar-uma-estomaterapeuta/</loc><lastmod>2026-11-03</lastmod></url>
-  <url><loc>https://www.nadiacraveiro.rlsn.com.br/conteudos/por-que-uma-ferida-demora-a-cicatrizar/</loc><lastmod>2026-11-03</lastmod></url>
-  <url><loc>https://www.nadiacraveiro.rlsn.com.br/conteudos/cuidados-com-a-pele-ao-redor-da-estomia/</loc><lastmod>2026-11-03</lastmod></url>
-  <url><loc>https://www.nadiacraveiro.rlsn.com.br/conteudos/sinais-de-alerta-em-uma-ferida/</loc><lastmod>2026-11-03</lastmod></url>
-  <url><loc>https://www.nadiacraveiro.rlsn.com.br/conteudos/cuidados-com-os-pes-de-quem-tem-diabetes/</loc><lastmod>2026-11-03</lastmod></url>
-  <url><loc>https://www.nadiacraveiro.rlsn.com.br/politica-de-privacidade.html</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://www.nadiacraveiro.rlsn.com.br/</loc><lastmod>2026-11-11</lastmod><priority>1.0</priority></url>
+  <url><loc>https://www.nadiacraveiro.rlsn.com.br/conteudos/quando-procurar-uma-estomaterapeuta/</loc><lastmod>2026-11-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.nadiacraveiro.rlsn.com.br/conteudos/por-que-uma-ferida-demora-a-cicatrizar/</loc><lastmod>2026-11-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.nadiacraveiro.rlsn.com.br/conteudos/cuidados-com-a-pele-ao-redor-da-estomia/</loc><lastmod>2026-11-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.nadiacraveiro.rlsn.com.br/conteudos/sinais-de-alerta-em-uma-ferida/</loc><lastmod>2026-11-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.nadiacraveiro.rlsn.com.br/conteudos/avaliacao-especializada-no-tratamento-de-feridas/</loc><lastmod>2026-11-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.nadiacraveiro.rlsn.com.br/conteudos/cuidados-com-os-pes-de-quem-tem-diabetes/</loc><lastmod>2026-11-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.nadiacraveiro.rlsn.com.br/politica-de-privacidade.html</loc><lastmod>2026-11-03</lastmod><priority>0.2</priority></url>
 </urlset>
